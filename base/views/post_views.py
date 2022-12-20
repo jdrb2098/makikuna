@@ -1,13 +1,8 @@
-from audioop import reverse
-from contextvars import Token
-from pipes import Template
-from django.shortcuts import render
 from base.forms import PostForm
 from django.views.generic.edit import CreateView
 from django.urls import reverse_lazy
 
 from rest_framework.decorators import api_view, permission_classes
-from rest_framework import viewsets
 from rest_framework.permissions import IsAuthenticated, IsAdminUser
 from base.permisions import IsDeveloper, IsLeadDeveloper
 from rest_framework.response import Response
@@ -122,10 +117,9 @@ class PostCreateView(CreateView):
     model = Post
     form_class = PostForm
     success_url = reverse_lazy('index')
-    
+
     def form_valid(self, form):
         form.instance.user = self.request.user
         return super().form_valid(form)
-    
-    
-   
+
+

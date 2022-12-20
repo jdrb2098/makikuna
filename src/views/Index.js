@@ -99,7 +99,7 @@ function Index() {
             document.body.classList.remove("index-page");
         };
     });
-    const latestPosts = post?.posts?.slice(0, 4);
+    const latestPosts = post?.posts?.slice(2, 6 );
 
     return (
         <>
@@ -577,33 +577,11 @@ function Index() {
                                                                             e.preventDefault()
                                                                         }
                                                                     >
-                                                                        Rover
-                                                                        raised
-                                                                        $65
-                                                                        million
-                                                                        for pet
-                                                                        sitting
+                                                                        {post?.posts[0]?.title}
                                                                     </a>
                                                                 </CardTitle>
                                                                 <p className="card-description">
-                                                                    Finding
-                                                                    temporary
-                                                                    housing for
-                                                                    your dog
-                                                                    should be as
-                                                                    easy as
-                                                                    renting an
-                                                                    Airbnb.
-                                                                    That’s the
-                                                                    idea behind
-                                                                    Rover, which
-                                                                    raised $65
-                                                                    million to
-                                                                    expand its
-                                                                    pet sitting
-                                                                    and
-                                                                    dog-walking
-                                                                    businesses...{" "}
+                                                                {post?.posts[0]?.description}
                                                                     <a
                                                                         href="#pablo"
                                                                         onClick={(
@@ -655,33 +633,11 @@ function Index() {
                                                                             e.preventDefault()
                                                                         }
                                                                     >
-                                                                        MateLabs
-                                                                        mixes
-                                                                        learning
-                                                                        with
-                                                                        IFTTT
+                                                                        {post?.posts[1]?.title}
                                                                     </a>
                                                                 </CardTitle>
                                                                 <p className="card-description">
-                                                                    If you’ve
-                                                                    ever wanted
-                                                                    to train a
-                                                                    machine
-                                                                    learning
-                                                                    model and
-                                                                    integrate it
-                                                                    with IFTTT,
-                                                                    you now can
-                                                                    with a new
-                                                                    offering
-                                                                    from
-                                                                    MateLabs.
-                                                                    MateVerse, a
-                                                                    platform
-                                                                    where
-                                                                    novices can
-                                                                    spin out
-                                                                    machine...
+                                                                {post?.posts[1]?.description}
                                                                     <a
                                                                         href="#pablo"
                                                                         onClick={(
@@ -708,7 +664,7 @@ function Index() {
                             {latestPosts?.map((post) => (
                                 <div key={post._id}>
                                     <p>
-                                        Fecha : {post.created_at.split("T")[0]}
+                                        Fecha : {post.fecha_post?.split("T")[0]}
                                     </p>
                                     <h2>{post.title}</h2>
                                     <div
